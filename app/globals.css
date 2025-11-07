@@ -1,10 +1,10 @@
 @import "tailwindcss";
-/* Removed incompatible tw-animate-css import that caused syntax errors */
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* GDG-inspired color theme */
+  /* Updated to modern gradient-friendly tech theme with glassmorphism support */
   --background: oklch(0.98 0.001 280);
   --foreground: oklch(0.15 0.01 280);
   --card: oklch(1 0 0);
@@ -12,16 +12,16 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0.01 280);
 
-  /* Primary: Google Blue */
+  /* Primary: Google Blue with vibrant accent */
   --primary: oklch(0.43 0.23 254);
   --primary-foreground: oklch(0.98 0.001 0);
 
-  /* Secondary: Light accent */
-  --secondary: oklch(0.95 0.01 280);
-  --secondary-foreground: oklch(0.15 0.01 280);
+  /* Secondary: Cyan/Teal for accent and highlights */
+  --secondary: oklch(0.52 0.21 187);
+  --secondary-foreground: oklch(0.98 0.001 0);
 
-  /* Accent: Vibrant teal for CTAs */
-  --accent: oklch(0.52 0.21 187);
+  /* Accent: Vibrant purple for interactive elements */
+  --accent: oklch(0.55 0.25 280);
   --accent-foreground: oklch(1 0 0);
 
   --muted: oklch(0.93 0.01 280);
@@ -51,49 +51,47 @@
 }
 
 .dark {
-  --background: oklch(0.12 0.01 280);
+  --background: oklch(0.1 0.01 280);
   --foreground: oklch(0.95 0.01 280);
-  --card: oklch(0.18 0.01 280);
+  --card: oklch(0.16 0.01 280);
   --card-foreground: oklch(0.95 0.01 280);
-  --popover: oklch(0.18 0.01 280);
+  --popover: oklch(0.16 0.01 280);
   --popover-foreground: oklch(0.95 0.01 280);
 
-  --primary: oklch(0.6 0.21 254);
-  --primary-foreground: oklch(0.12 0.01 280);
+  --primary: oklch(0.65 0.21 254);
+  --primary-foreground: oklch(0.1 0.01 280);
 
-  --secondary: oklch(0.25 0.01 280);
-  --secondary-foreground: oklch(0.95 0.01 280);
+  --secondary: oklch(0.65 0.18 187);
+  --secondary-foreground: oklch(0.1 0.01 280);
 
-  --accent: oklch(0.65 0.18 187);
-  --accent-foreground: oklch(0.12 0.01 280);
+  --accent: oklch(0.7 0.22 280);
+  --accent-foreground: oklch(0.1 0.01 280);
 
-  --muted: oklch(0.3 0.02 280);
-  --muted-foreground: oklch(0.7 0.02 280);
+  --muted: oklch(0.25 0.02 280);
+  --muted-foreground: oklch(0.75 0.02 280);
   --destructive: oklch(0.55 0.2 25);
   --destructive-foreground: oklch(0.95 0.01 0);
-  --border: oklch(0.25 0.01 280);
-  --input: oklch(0.2 0.01 280);
-  --ring: oklch(0.6 0.21 254);
+  --border: oklch(0.22 0.01 280);
+  --input: oklch(0.18 0.01 280);
+  --ring: oklch(0.65 0.21 254);
 
-  --chart-1: oklch(0.6 0.21 254);
+  --chart-1: oklch(0.65 0.21 254);
   --chart-2: oklch(0.65 0.18 187);
   --chart-3: oklch(0.7 0.14 145);
   --chart-4: oklch(0.65 0.16 40);
   --chart-5: oklch(0.75 0.1 350);
 
-  --sidebar: oklch(0.15 0.01 280);
+  --sidebar: oklch(0.12 0.01 280);
   --sidebar-foreground: oklch(0.95 0.01 280);
-  --sidebar-primary: oklch(0.6 0.21 254);
-  --sidebar-primary-foreground: oklch(0.12 0.01 280);
+  --sidebar-primary: oklch(0.65 0.21 254);
+  --sidebar-primary-foreground: oklch(0.1 0.01 280);
   --sidebar-accent: oklch(0.65 0.18 187);
-  --sidebar-accent-foreground: oklch(0.12 0.01 280);
-  --sidebar-border: oklch(0.25 0.01 280);
-  --sidebar-ring: oklch(0.6 0.21 254);
+  --sidebar-accent-foreground: oklch(0.1 0.01 280);
+  --sidebar-border: oklch(0.22 0.01 280);
+  --sidebar-ring: oklch(0.65 0.21 254);
 }
 
 @theme inline {
-  --font-sans: "Inter", "Inter Fallback";
-  --font-jakarta: "Plus Jakarta Sans", "Plus Jakarta Sans Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -145,23 +143,54 @@
     @apply bg-background text-foreground;
   }
 
-  /* Add typography utilities */
-  .font-jakarta {
-    font-family: var(--font-jakarta), sans-serif;
-  }
-
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-jakarta font-bold;
+    @apply font-bold;
   }
 
   /* Smooth transitions for theme changes */
   * {
     @apply transition-colors duration-200;
+  }
+}
+
+/* Added glassmorphism and enhanced animation utilities */
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+
+  .glass-dark {
+    @apply dark:bg-black/20 dark:backdrop-blur-xl dark:border dark:border-white/10;
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden group;
+  }
+
+  .btn-glow::before {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000;
+    content: "";
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
   }
 }
 
