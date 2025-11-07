@@ -1,9 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Plus_Jakarta_Sans } from "next/font/google"
+import { Inter, Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 
-const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" })
 
 export const metadata: Metadata = {
   title: "GDG On Campus – DSU",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     title: "GDG On Campus – DSU",
     description: "Build. Learn. Ship — Community, Learning, and Impact",
   },
-  generator: "v0.app",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${plusJakartaSans.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}>{children}</body>
     </html>
   )
 }
