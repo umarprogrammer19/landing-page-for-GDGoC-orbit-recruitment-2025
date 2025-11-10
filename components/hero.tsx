@@ -19,7 +19,7 @@ export default function Hero() {
   if (!mounted) return null
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0 bg-gradient-to-br from-primary/5 to-accent/5">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0 bg-linear-to-br from-primary/5 to-accent/5">
       {/* Dynamic background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <Blob className="w-[450px] h-[450px] top-[8%] left-[10%] bg-blue-400/20 animate-blob-pulse" />
