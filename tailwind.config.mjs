@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import { fontFamily } from "tailwindcss/defaultTheme"
+import defaultTheme from "tailwindcss/defaultTheme"
 
 const config = {
   darkMode: ["class"],
@@ -73,8 +73,8 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        jakarta: ["var(--font-jakarta)", ...fontFamily.sans],
+        sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
+        jakarta: ["var(--font-jakarta)", ...defaultTheme.fontFamily.sans],
       },
     },
   },
