@@ -59,13 +59,13 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20"
         >
-          <Button size="xl" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3 text-lg group shadow-xl hover:shadow-2xl transition-all duration-300" asChild>
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3 text-lg group shadow-xl hover:shadow-2xl transition-all duration-300" asChild>
             <a href="#contact">
               Join the Chapter
               <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </Button>
-          <Button size="xl" variant="outline" className="px-10 py-3 text-lg bg-transparent border-2 border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-300 group ring-2 ring-transparent hover:ring-primary/50" asChild>
+          <Button size="lg" variant="outline" className="px-10 py-3 text-lg bg-transparent border-2 border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-300 group ring-2 ring-transparent hover:ring-primary/50" asChild>
             <a href="#events">See Events</a>
           </Button>
         </motion.div>
