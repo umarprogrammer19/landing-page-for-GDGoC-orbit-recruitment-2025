@@ -5,11 +5,7 @@ import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-interface NavbarProps {
-  isDark: boolean
-  onToggleTheme: () => void
-}
+import { useTheme } from "next-themes"
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -19,8 +15,9 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ]
 
-export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
 
   return (
     <motion.nav
@@ -63,11 +60,11 @@ export default function Navbar({ isDark, onToggleTheme }: NavbarProps) {
           <div className="flex items-center gap-4">
             {/* Theme Toggle */}
             <button
-              onClick={onToggleTheme}
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               aria-label="Toggle theme"
               className="rounded-lg p-2 hover:bg-muted transition-colors"
             >
-              {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
 
             {/* CTA Button */}

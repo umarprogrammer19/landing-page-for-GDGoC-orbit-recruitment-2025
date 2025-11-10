@@ -5,28 +5,16 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
+const Blob = ({ className }: { className?: string }) => (
+  <div className={`absolute rounded-full bg-primary/10 blur-3xl ${className}`} />
+)
+
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
-
-  const FloatingDot = ({ delay, x, y }: { delay: number; x: number; y: number }) => (
-    <motion.div
-      animate={{
-        y: [0, -20, 0],
-        opacity: [0.3, 0.6, 0.3],
-      }}
-      transition={{
-        duration: 6,
-        repeat: Number.POSITIVE_INFINITY,
-        delay,
-      }}
-      className="absolute w-2 h-2 rounded-full bg-primary"
-      style={{ left: `${x}%`, top: `${y}%` }}
-    />
-  )
 
   if (!mounted) return null
 
@@ -35,11 +23,11 @@ export default function Hero() {
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
 
-      {/* Floating accent dots */}
+      {/* Dynamic background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <FloatingDot key={i} delay={i * 0.3} x={10 + i * 18} y={10 + (i % 2) * 40} />
-        ))}
+        <Blob className="w-96 h-96 top-1/4 left-1/4 animate-blob-pulse" />
+        <Blob className="w-80 h-80 bottom-1/4 right-1/4 animate-blob-pulse-delay" />
+        <Blob className="w-72 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-blob-pulse-medium" />
       </div>
 
       {/* Content */}
@@ -73,7 +61,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
         >
           <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 group" asChild>
             <a href="#contact">
@@ -91,19 +79,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-16 grid grid-cols-3 gap-4 sm:gap-8 pt-12 border-t border-border"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-12 border-t border-border"
         >
-          <div>
-            <p className="text-2xl md:text-3xl font-jakarta font-bold text-primary">500+</p>
-            <p className="text-sm text-muted-foreground mt-2">Active Members</p>
+          <div className="flex flex-col items-center">
+            <p className="text-4xl font-jakarta font-bold text-primary">500+</p>
+            <p className="text-md text-muted-foreground mt-2">Active Members</p>
           </div>
-          <div>
-            <p className="text-2xl md:text-3xl font-jakarta font-bold text-primary">48+</p>
-            <p className="text-sm text-muted-foreground mt-2">Events Hosted</p>
+          <div className="flex flex-col items-center">
+            <p className="text-4xl font-jakarta font-bold text-primary">48+</p>
+            <p className="text-md text-muted-foreground mt-2">Events Hosted</p>
           </div>
-          <div>
-            <p className="text-2xl md:text-3xl font-jakarta font-bold text-primary">12+</p>
-            <p className="text-sm text-muted-foreground mt-2">Partners</p>
+          <div className="flex flex-col items-center">
+            <p className="text-4xl font-jakarta font-bold text-primary">12+</p>
+            <p className="text-md text-muted-foreground mt-2">Partners</p>
           </div>
         </motion.div>
       </div>
