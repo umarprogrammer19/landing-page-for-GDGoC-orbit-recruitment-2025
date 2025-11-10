@@ -19,21 +19,18 @@ export default function Hero() {
   if (!mounted) return null
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0 bg-gradient-to-br from-background via-primary/5 to-background">
       {/* Dynamic background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <Blob className="w-96 h-96 top-1/4 left-1/4 animate-blob-pulse" />
-        <Blob className="w-80 h-80 bottom-1/4 right-1/4 animate-blob-pulse-delay" />
-        <Blob className="w-72 h-72 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-blob-pulse-medium" />
+        <Blob className="w-[400px] h-[400px] top-[10%] left-[15%] animate-blob-pulse" />
+        <Blob className="w-[350px] h-[350px] bottom-[20%] right-[10%] animate-blob-pulse-delay" />
+        <Blob className="w-[500px] h-[500px] top-[40%] left-[40%] -translate-x-1/2 -translate-y-1/2 animate-blob-pulse-medium" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <span className="inline-block mb-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-sm font-medium text-primary">
+      <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center py-20">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+          <span className="inline-block mb-6 px-6 py-2 bg-primary/15 border border-primary/30 rounded-full text-md font-semibold text-primary shadow-sm tracking-wide animate-fade-in-up">
             ✨ Google Developer Groups On Campus
           </span>
         </motion.div>
@@ -41,57 +38,56 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-jakarta text-5xl md:text-7xl font-bold tracking-tight mb-6"
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-jakarta text-6xl md:text-8xl font-extrabold tracking-tight mb-8 leading-tight"
         >
-          <span className="text-primary">Build.</span> <span className="text-balance">Learn. Ship.</span>
+          <span className="text-primary">Build.</span> <span className="text-foreground text-balance">Learn. Ship.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto text-balance leading-relaxed"
         >
-          Connect with developers, learn cutting-edge technologies, and build impactful projects together at Dar es
-          Salaam University.
+          Connect with passionate developers, master cutting-edge technologies, and build impactful projects together at Dar es Salaam University.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20"
         >
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 group" asChild>
+          <Button size="xl" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3 text-lg group shadow-lg hover:shadow-xl transition-all duration-300" asChild>
             <a href="#contact">
               Join the Chapter
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </Button>
-          <Button size="lg" variant="outline" className="px-8 bg-transparent" asChild>
+          <Button size="xl" variant="outline" className="px-10 py-3 text-lg bg-transparent border-2 border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-300" asChild>
             <a href="#events">See Events</a>
           </Button>
         </motion.div>
 
         {/* Stats Preview */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-12 border-t border-border"
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-16 border-t border-border/70 bg-card/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl"
         >
           <div className="flex flex-col items-center">
-            <p className="text-4xl font-jakarta font-bold text-primary">500+</p>
-            <p className="text-md text-muted-foreground mt-2">Active Members</p>
+            <p className="text-5xl font-jakarta font-bold text-primary mb-3">500+</p>
+            <p className="text-lg text-muted-foreground font-medium">Active Members</p>
           </div>
           <div className="flex flex-col items-center">
-            <p className="text-4xl font-jakarta font-bold text-primary">48+</p>
-            <p className="text-md text-muted-foreground mt-2">Events Hosted</p>
+            <p className="text-5xl font-jakarta font-bold text-primary mb-3">48+</p>
+            <p className="text-lg text-muted-foreground font-medium">Events Hosted</p>
           </div>
           <div className="flex flex-col items-center">
-            <p className="text-4xl font-jakarta font-bold text-primary">12+</p>
-            <p className="text-md text-muted-foreground mt-2">Partners</p>
+            <p className="text-5xl font-jakarta font-bold text-primary mb-3">12+</p>
+            <p className="text-lg text-muted-foreground font-medium">Partners</p>
           </div>
         </motion.div>
       </div>

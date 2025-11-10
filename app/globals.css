@@ -146,3 +146,22 @@
 .animate-blob-pulse-medium {
   animation: blob-pulse-medium 8s infinite ease-in-out;
 }
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+.radial-gradient {
+  background-image: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
