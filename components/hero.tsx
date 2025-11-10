@@ -53,35 +53,34 @@ export default function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="font-jakarta text-5xl md:text-7xl font-bold tracking-tight mb-6"
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="font-jakarta text-6xl md:text-8xl font-extrabold tracking-tight mb-8 leading-tight text-foreground drop-shadow-md"
         >
-          <span className="text-primary">Build.</span> <span className="text-balance">Learn. Ship.</span>
+          <span className="text-primary drop-shadow-lg">Build.</span> <span className="text-balance">Learn. Ship.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto text-balance leading-relaxed drop-shadow-sm"
         >
-          Connect with developers, learn cutting-edge technologies, and build impactful projects together at Dar es
-          Salaam University.
+          Connect with passionate developers, master cutting-edge technologies, and build impactful projects together at Dar es Salaam University.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="flex flex-col sm:flex-row gap-5 justify-center items-center mb-20"
         >
-          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 group" asChild>
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 py-3 text-lg group shadow-xl hover:shadow-2xl transition-all duration-300" asChild>
             <a href="#contact">
               Join the Chapter
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
           </Button>
-          <Button size="lg" variant="outline" className="px-8 bg-transparent" asChild>
+          <Button size="lg" variant="outline" className="px-10 py-3 text-lg bg-transparent border-2 border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-300 group ring-2 ring-transparent hover:ring-primary/50" asChild>
             <a href="#events">See Events</a>
           </Button>
         </motion.div>
@@ -93,17 +92,17 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-16 grid grid-cols-3 gap-4 sm:gap-8 pt-12 border-t border-border"
         >
-          <div>
-            <p className="text-2xl md:text-3xl font-jakarta font-bold text-primary">500+</p>
-            <p className="text-sm text-muted-foreground mt-2">Active Members</p>
+          <div className="flex flex-col items-center">
+            <p className="text-5xl font-jakarta font-extrabold text-primary mb-3 text-shadow-md">500+</p>
+            <p className="text-lg text-muted-foreground font-medium">Active Members</p>
           </div>
-          <div>
-            <p className="text-2xl md:text-3xl font-jakarta font-bold text-primary">48+</p>
-            <p className="text-sm text-muted-foreground mt-2">Events Hosted</p>
+          <div className="flex flex-col items-center">
+            <p className="text-5xl font-jakarta font-extrabold text-primary mb-3 text-shadow-md">48+</p>
+            <p className="text-lg text-muted-foreground font-medium">Events Hosted</p>
           </div>
-          <div>
-            <p className="text-2xl md:text-3xl font-jakarta font-bold text-primary">12+</p>
-            <p className="text-sm text-muted-foreground mt-2">Partners</p>
+          <div className="flex flex-col items-center">
+            <p className="text-5xl font-jakarta font-extrabold text-primary mb-3 text-shadow-md">12+</p>
+            <p className="text-lg text-muted-foreground font-medium">Partners</p>
           </div>
         </motion.div>
       </div>
