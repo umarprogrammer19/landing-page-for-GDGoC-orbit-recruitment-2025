@@ -91,7 +91,7 @@ export default function Sponsors() {
           <div className="absolute inset-0 z-0 opacity-10">
             <svg className="w-full h-full" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
               <pattern id="pattern-grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                <path d="M 10 0 L 0 0 L 0 10" fill="none" stroke="hsl(var(--primary))" stroke-opacity="0.1" stroke-width="0.5" />
+                <path d="M 10 0 L 0 0 L 0 10" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.1" strokeWidth="0.5" />
               </pattern>
               <rect width="100%" height="100%" fill="url(#pattern-grid)" />
             </svg>
