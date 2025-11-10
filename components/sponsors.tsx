@@ -15,7 +15,7 @@ interface TierProps {
 function SponsorTier({ title, sponsors: tierSponsors, columns }: TierProps) {
   return (
     <div>
-      <h3 className="font-jakarta text-3xl md:text-4xl font-extrabold mb-10 text-foreground relative after:absolute after:left-0 after:bottom-[-12px] after:h-1.5 after:w-24 after:bg-primary after:rounded-full after:shadow-md">
+      <h3 className="font-jakarta text-3xl md:text-4xl font-extrabold mb-10 text-foreground relative after:absolute after:left-0 after:-bottom-3 after:h-1.5 after:w-24 after:bg-primary after:rounded-full after:shadow-md">
         {title}
       </h3>
       <div
@@ -41,7 +41,7 @@ function SponsorTier({ title, sponsors: tierSponsors, columns }: TierProps) {
             className="group relative p-10 rounded-3xl border border-border bg-card shadow-lg hover:border-primary/60 transition-all duration-300 overflow-hidden flex flex-col items-center justify-center text-center"
           >
             {/* Dynamic background glow on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
               <Image
@@ -64,7 +64,7 @@ function SponsorTier({ title, sponsors: tierSponsors, columns }: TierProps) {
 
 export default function Sponsors() {
   return (
-    <section id="sponsors" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-primary/5">
+    <section id="sponsors" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-linear-to-br from-background to-primary/5">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
           eyebrow="Our Valued Partners"
@@ -85,7 +85,7 @@ export default function Sponsors() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.4 }}
-          className="p-12 md:p-20 rounded-4xl bg-gradient-to-br from-primary/15 via-accent/15 to-primary/15 border border-primary/30 text-center shadow-2xl relative overflow-hidden"
+          className="p-12 md:p-20 rounded-4xl bg-linear-to-br from-primary/15 via-accent/15 to-primary/15 border border-primary/30 text-center shadow-2xl relative overflow-hidden"
         >
           {/* Subtle background pattern */}
           <div className="absolute inset-0 z-0 opacity-10">
@@ -104,7 +104,7 @@ export default function Sponsors() {
             <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed">
               Partner with GDG DSU to amplify your brand presence, engage with over 500 enthusiastic developers, and profoundly contribute to nurturing the future of tech talent.
             </p>
-            <Button size="xl" className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-4 text-lg shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
               Sponsorship Inquiry
             </Button>
           </div>
