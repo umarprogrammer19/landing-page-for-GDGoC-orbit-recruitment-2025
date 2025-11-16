@@ -1,4 +1,4 @@
-// Type Team
+// Type Team Member
 export interface TeamMember {
   id: string
   name: string
@@ -12,6 +12,7 @@ export interface TeamMember {
   }
 }
 
+// Team extends team member
 export const team: TeamMember[] = [
   {
     id: "1",
